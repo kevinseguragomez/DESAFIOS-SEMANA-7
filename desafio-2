@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        double[][] datos =
+        {
+            new double[] { 50, 20, 10, 5, 10 },
+            new double[] { 200, 300, 100, 50, 150 },
+            new double[] { 500, 400, 200, 100, 50 },
+            new double[] { 80, 10, 5, 2, 1 },
+            new double[] { 1200, 300, 200, 100, 50 }
+        };
+
+        foreach (var c in datos)
+        {
+            double t = c.Sum();
+            double d = t > 1000 ? 0.2 : t >= 100 ? 0.1 : 0;
+            Console.WriteLine($"Total: {t}, Desc: {d*100}%, Final: {t*(1-d)}");
+        }
+    }
+}
